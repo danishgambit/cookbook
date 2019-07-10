@@ -1,0 +1,4 @@
+This is the 1st line of a python file.
+Actually, theres no python code in this file at all.
+Rather, its being used as a sample text file.
+Will be loaded into a python program.
