@@ -53,5 +53,19 @@ order they were inserted into the queue
 Discussion:  the core of this recipe uses the heapq module.  heapq.heappush() & heapq.heappop()
              insert & remove items from a list_queue such that the 1st item in the list has the
              smallest priority (see 1-4.py).  The heappop() method always returns the 'smallest' ite,
-             so that's key for making the queue pop the correct items
+             so that's key for making the queue pop the correct items.
+
+             As the push() and pop() operations have O(log N) complexity, where N's the number of items
+             in the heap, they're fairly efficient even for large values of N.
+
+             In this recipe, the queue consists of tuples of the form
+                (-priority, index, item).
+             The priority value is negated to get the queue to sort items from highest priority to lowest
+            priority.  This is the opposite of the normal heap ordering, which sorts from lowest to
+            highest value.
+
+            It's the role of the index variable to properly order items with the same priority level.
+            By keeping a constantly increasing index, the items will be sorted according to the order in
+            which they were inserted.  However, the index also serves an important role in making the
+            comparison operations work for items that have the same priority level.
 '''
